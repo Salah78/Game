@@ -1,0 +1,125 @@
+/* SnakeGame.css */
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.score-container {
+  position: absolute;
+  top: 50%;
+  right: 250px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px; /* Augmentez la valeur pour un bord plus arrondi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  z-index: 1; 
+  overflow: hidden; 
+}
+
+.score {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 100px; /* Ajustez cette valeur pour déplacer le texte vers le haut */
+}
+
+.snake-animation {
+  position: relative;
+  width: 400px; /* Ajustez la largeur selon vos besoins */
+  height: 400px; /* Ajustez la hauteur selon vos besoins */
+  animation: snakeAnimation 2s infinite linear;
+}
+
+@keyframes snakeAnimation {
+  0% { top: 0; left: 0; }
+  25% { top: 0; left: 100%; }
+  50% { top: 100%; left: 100%; }
+  75% { top: 100%; left: 0; }
+  100% { top: 0; left: 0; }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(30, 20px);
+  gap: 2px;
+  border: 2px solid #333;
+  background-color: #c1ecc1;
+}
+
+.grid-item {
+  width: 20px;
+  height: 20px;
+  background-color: #c1ecc1;
+}
+
+.snake-segment {
+  background-color: #03441c; /* Couleur du serpent */
+}
+
+.food {
+  background-color: #e74c3c; /* Couleur de la nourriture */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: #03441c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.food-image {
+  width: 20px; 
+  height: 20px; /* Double de la taille actuelle de la nourriture */
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+}
